@@ -1,0 +1,153 @@
+.frame {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .frame .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1236px;
+    height: 664px;
+    position: relative;
+  }
+  
+  .frame .overlap {
+    position: absolute;
+    width: 1269px;
+    height: 134px;
+    top: 0;
+    left: -33px;
+  }
+  
+  .frame .rectangle {
+    position: absolute;
+    width: 1236px;
+    height: 134px;
+    top: 0;
+    left: 33px;
+    background-color: #9b2828;
+  }
+  
+  .frame .text-wrapper {
+    position: absolute;
+    width: 586px;
+    top: 46px;
+    left: 0;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #fffcfc;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .overlap-group {
+    position: absolute;
+    width: 1236px;
+    height: 530px;
+    top: 134px;
+    left: 0;
+    background-image: url(../img/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .frame .rectangle-2 {
+    position: absolute;
+    width: 608px;
+    height: 311px;
+    top: 109px;
+    left: 314px;
+    background-color: #9c2020;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: absolute;
+    width: auto;
+    top: 127px;
+    left: 445px;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .rectangle-3 {
+    position: absolute;
+    width: 375px;
+    height: 36px;
+    top: 208px;
+    left: 430px;
+    background-color: #d9d9d9;
+  }
+  
+  .frame .rectangle-4 {
+    position: absolute;
+    width: 375px;
+    height: 36px;
+    top: 265px;
+    left: 430px;
+    background-color: #d9d9d9;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: absolute;
+    width: 161px;
+    top: 213px;
+    left: 392px;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #756f6f;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .text-wrapper-4 {
+    position: absolute;
+    width: 161px;
+    top: 270px;
+    left: 416px;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #756f6f;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .frame .rectangle-5 {
+    position: absolute;
+    width: 193px;
+    height: 50px;
+    top: 340px;
+    left: 521px;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .frame .text-wrapper-5 {
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  

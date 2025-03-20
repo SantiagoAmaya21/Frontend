@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <div class="div">
+        <div class="overlap-group">
+          <div class="rectangle"></div>
+
+          <!-- Formulario de Login -->
+          <form id="loginForm">
+            <!-- Campo de usuario -->
+            <div class="rectangle-3"></div>
+            <label for="username" class="text-wrapper-2">Username:</label>
+            <input type="text" id="username" class="rectangle-3" />
+            <div class="text-wrapper-2">Username:</div>
+        
+            <!-- Campo de contraseña -->
+            <div class="rectangle-2"></div>
+            <label for="password" class="text-wrapper">Password:</label>
+            <input type="password" id="password" class="rectangle-2" />
+            <div class="text-wrapper">Password:</div>
+        
+            <div class="text-wrapper-3">Sign in</div>
+        
+            <!-- Mensaje de error o éxito -->
+            <div id="loginMessage"></div>
+            
+            <div class="rectangle-5" id="nextButton">
+                <span class="text-wrapper-5">Next</span>
+            </div>
+          </form>
+
+          <p class="i-don-t-have-an">
+            I don&#39;t have an account.
+            <a href="./pages/register.html" class="sign-up-link">Sign up</a>
+          </p>
+        </div>
+
+        <div class="overlap">
+          <div class="rectangle-6"></div>
+          <div class="text-wrapper-6">Laboratory Reserves</div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/controllers/loginUI.js"></script>
+  </body>
+</html>
