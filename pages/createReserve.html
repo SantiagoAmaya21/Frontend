@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Reservation</title>
+    <link rel="stylesheet" href="../css/createReserve.css">
+</head>
+<body>
+    <div class="frame">
+        <div class="div">
+            <div class="overlap-group">
+                <div class="rectangle"></div>
+
+                <label for="purpose" class="text-wrapper">Purpose:</label>
+                <input type="text" id="purpose" class="rectangle-2">
+
+                <label for="start" class="text-wrapper-2">Start:</label>
+                <input type="datetime-local" id="start" class="rectangle-3">
+
+                <label for="end" class="text-wrapper-3">End:</label>
+                <input type="datetime-local" id="end" class="rectangle-4">
+
+                <label for="labName" class="text-wrapper-5">Laboratory:</label>
+                <input type="text" id="labName" class="rectangle-5">
+
+                <div class="rectangle-6" id="backToMenuButton">
+                    <span class="text-wrapper-6">Back</span>
+                </div>
+
+                <div class="text-wrapper-4">Create Reservation</div>
+
+                <div class="rectangle-7" id="createReserveButton">
+                    <span class="text-wrapper-7">Create</span>
+                </div>
+            </div>
+
+            <div class="overlap">
+                <div class="rectangle-8"></div>
+                <div class="text-wrapper-8">Laboratory Reserves</div>
+            </div>
+
+            <img class="image" src="../img/laboratories.png">
+        </div>
+    </div>
+
+    <!-- Tabla para mostrar las reservas -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Laboratory</th>
+                <th>User</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Purpose</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody id="reservesTableBody"></tbody>
+    </table>
+
+    <script src="../js/navigation.js"></script>
+    <script type="module" src="../js/controllers/reservesUI.js"></script>
+</body>
+</html>
