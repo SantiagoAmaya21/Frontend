@@ -26,7 +26,7 @@ export async function getLaboratoryByName(name) {
 
 export async function createLaboratory(laboratoryData) {
     try {
-        const response = await fetch(LAB_API, {
+        const response = await fetch(`${LAB_API}/create`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(laboratoryData),

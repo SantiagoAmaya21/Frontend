@@ -8,14 +8,14 @@ const AdminDashboard = () => {
     <div className="admin-dashboard-container">
       <div className="dashboard-box">
         <h2 className="dashboard-title">Admin Dashboard</h2>
-        <button className="dashboard-button createLab-btn" onClick={() => navigate("/createlaboratory")}>
-          Create Reservation
+        <button className="dashboard-button createLab-btn" onClick={() => navigate("/create-laboratory")}>
+          Create Laboratory
         </button>
         <button className="dashboard-button createAdmin-btn" onClick={() => navigate("/create-admin")}>
-          Consult Laboratories
+          Create Admin
         </button>
         <button className="dashboard-button graphics-btn" onClick={() => navigate("/graphics")}>
-          Delete Reservation
+          Graphics
         </button>
         <button className="dashboard-button back-btn" onClick={() => navigate("/")}>
           Back

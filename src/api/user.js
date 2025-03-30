@@ -4,6 +4,7 @@ const USER_API = `${URL}/api/users`;
 
 export async function getUserByUsername(username) {
     try {
+
         const response = await fetch(`${USER_API}/username/${username}`);
         if (!response.ok) throw new Error("User not found!");
         return await response.json();
@@ -36,9 +37,14 @@ export async function createUser(userData) {
 
 export async function createAdmin(username) {
     try {
+        const token = localStorage.getItem("token");
+
         const response = await fetch(`${USER_API}/admin/create/${username}`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" }
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
         });
 
         if (!response.ok) {
@@ -49,9 +55,10 @@ export async function createAdmin(username) {
         return await response.json();
     } catch (error) {
         console.error("Failed to create admin:", error);
-        return null;
+        throw new Error("Failed to fetch. Server is unavailable.");
     }
 }
+
 
 export async function deleteUser(id) {
         try {

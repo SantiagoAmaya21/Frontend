@@ -14,7 +14,7 @@ const CreateLaboratory = ({ onBack }) => {
         }
 
         try {
-            await createLaboratory(labName);
+            await createLaboratory({ name: labName });
             alert("Laboratory created successfully!");
             setLabName("");
         } catch (error) {
@@ -31,7 +31,7 @@ const CreateLaboratory = ({ onBack }) => {
                         <img src={labImage} alt="Laboratory" className="lab-image" />
                         <div className="create-container">
                             <h2 className="create-title">Create Laboratory</h2>
-                            <label className="create-label">Laboratory ID:</label>
+                            <label className="create-label">Laboratory name:</label>
                             <input
                                 className="create-input"
                                 type="text"
