@@ -1,0 +1,70 @@
+/* Contenedor principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../img/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg') no-repeat center center/cover;
+}
+
+/* Caja de login */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+h2 {
+  color: #333;
+}
+
+/* Estilo de inputs */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+.login-button:hover {
+  background-color: #7a1818;
+}
+
+/* Botón de Next */
+.next-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.next-button:hover {
+  background-color: #b3b3b3;
+}
+
+/* Enlace de registro */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.sign-up-link {
+  color: #9c2020;
+  text-decoration: none;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+}
+
+
