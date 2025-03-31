@@ -1,0 +1,52 @@
+{
+    "navigationFallback": {
+      "rewrite": "/index.html"
+    },
+    "routes": [
+      {
+        "route": "/",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/register",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/login",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/user_dashboard",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/admin_dashboard",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/create-reserve",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/delete-reserve",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/consult-labs",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/create-laboratory",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/create-admin",
+        "serve": "/index.html"
+      },
+      {
+        "route": "/analytics",
+        "serve": "/index.html"
+      }
+    ]
+  }
+  
