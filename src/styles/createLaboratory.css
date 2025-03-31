@@ -1,0 +1,73 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Más espacio entre la imagen y el formulario */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permite que se acomode en pantallas pequeñas */
+}
+
+.lab-image {
+    width: 500px; /* Tamaño más manejable */
+    height: auto;
+    border-radius: 10px;
+}
+
+.create-container {
+    background-color: #9c2020;
+    width: 350px; /* Tamaño más pequeño para mejor alineación */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.create-title {
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.create-label {
+    font-size: 16px;
+    color: #d9d9d9;
+    font-weight: bold;
+}
+
+.create-input {
+    width: 80%;
+    padding: 8px;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #d9d9d9;
+    border: none;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.create-button {
+    width: 100px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #d9d9d9;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.create-button:hover {
+    background-color: #b0b0b0;
+}
