@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3088af3d.css",
+    "main.js": "/static/js/main.fec35ab9.js",
+    "static/media/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg": "/static/media/escuela-colombiana-de-ingenieria-julio-garavito-banner.97e9572b38f3c778e18d.jpg",
+    "static/media/laboratories.png": "/static/media/laboratories.87f172f1ba043841ee4d.png",
+    "index.html": "/index.html",
+    "main.3088af3d.css.map": "/static/css/main.3088af3d.css.map",
+    "main.fec35ab9.js.map": "/static/js/main.fec35ab9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3088af3d.css",
+    "static/js/main.fec35ab9.js"
+  ]
+}
