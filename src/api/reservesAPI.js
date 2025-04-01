@@ -35,7 +35,7 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
         });
 
         if (!response.ok) {
-            throw new Error(`Error creating reservation: ${errorMessage}`);
+            throw new Error("Error creating reservation");
         }
 
         return await response.json();

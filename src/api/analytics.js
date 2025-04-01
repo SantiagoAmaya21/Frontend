@@ -14,7 +14,7 @@ export const getReservationsByDate = async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`Error al obtener reservas por fecha: ${errorMessage}`);
+            throw new Error("Error al obtener reservas por fecha");
         }
 
         return await response.json();
@@ -37,7 +37,7 @@ export const getReservationsByLab = async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`Error al obtener reservas por laboratorio: ${errorMessage}`);
+            throw new Error("Error al obtener reservas por laboratorio");
         }
 
         return await response.json();
@@ -60,7 +60,7 @@ export const getAverageReservationsByPriority = async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`Error al obtener promedio de reservas por prioridad: ${errorMessage}`);
+            throw new Error("Error al obtener promedio de reservas por prioridad");
         }
 
         return await response.json();
@@ -84,7 +84,7 @@ export const getLabDemandLevels = async () => {
         });
 
         if (!response.ok) {
-            throw new Error(`Error al obtener demanda de laboratorios: ${errorMessage}`);
+            throw new Error("Error al obtener demanda de laboratorios");
         }
 
         return await response.json();
