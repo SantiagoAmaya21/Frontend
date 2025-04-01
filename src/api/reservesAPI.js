@@ -14,7 +14,6 @@ const RESERVES_API = `${URL}/reservations`;
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
     try {
-        const token = localStorage.getItem("token");
 
         const reservationData = {
             labName,
@@ -28,8 +27,7 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
         const response = await fetch(`${RESERVES_API}/create`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(reservationData)
         });
@@ -51,10 +49,8 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
  * @returns {Promise<object[]>} - Lista de reservas
  */
 export async function getAllReservations() {
-    const token = localStorage.getItem("token");
     const response = await fetch(`${RESERVES_API}/all`, {
-          method: "GET",
-          headers: { "Authorization": `Bearer ${token}` }
+          method: "GET"
     });
     if (!response.ok) throw new Error("Error al obtener reservas!");
     return response.json();
@@ -66,11 +62,8 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
-
-    const token = localStorage.getItem("token");
     const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-        method: "DELETE",
-        headers: { "Authorization": `Bearer ${token}` }
+        method: "DELETE"
     });
 
     if (!response.ok) throw new Error("Error al cancelar la reserva!");
