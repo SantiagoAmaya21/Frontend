@@ -51,7 +51,11 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
  * @returns {Promise<object[]>} - Lista de reservas
  */
 export async function getAllReservations() {
-    const response = await fetch(`${RESERVES_API}/all`);
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${RESERVES_API}/all`, {
+          method: "GET",
+          headers: { "Authorization": `Bearer ${token}` }
+    });
     if (!response.ok) throw new Error("Error al obtener reservas!");
     return response.json();
 }
