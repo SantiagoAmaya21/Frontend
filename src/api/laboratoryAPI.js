@@ -43,11 +43,25 @@ export async function createLaboratory(laboratoryData) {
 }
 
 export async function checkLaboratoriesAvailability(startDateTime, endDateTime) {
-    const response = await fetch(
-        `${LAB_API}/avaiable?startDateTime=${encodeURIComponent(startDateTime)}&endDateTime=${encodeURIComponent(endDateTime)}`
-    );
-    if (!response.ok) throw new Error("Failed to check availability");
-    return await response.json(); // Devuelve un array de strings (nombres de laboratorios)
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+            `${LAB_API}/avaiable?startDateTime=${encodeURIComponent(startDateTime)}&endDateTime=${encodeURIComponent(endDateTime)}`,
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        if (!response.ok) throw new Error("Failed to check availability");
+        return await response.json();
+
+    } catch (error) {
+        console.error("Error al consultar disponibilidad:", error.message);
+        return null;
+    }
 }
 
 

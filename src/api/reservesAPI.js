@@ -9,27 +9,42 @@ const RESERVES_API = `${URL}/reservations`;
  * @param {string} startDateTime - Fecha y hora de inicio
  * @param {string} endDateTime - Fecha y hora de finalización
  * @param {string} purpose - Propósito de la reserva
+ * @param {string} priority - Prioridad de la reserva
  * @returns {Promise<object>} - Reserva creada
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
-    const reservationData = {
-        labName,
-        username: getCurrentUserId(),
-        startDateTime,
-        endDateTime,
-        purpose,
-        priority
-    };
+    try {
+        const token = localStorage.getItem("token");
 
-    const response = await fetch(`${RESERVES_API}/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(reservationData)
-    });
+        const reservationData = {
+            labName,
+            username: getCurrentUserId(),
+            startDateTime,
+            endDateTime,
+            purpose,
+            priority
+        };
 
-    if (!response.ok) throw new Error("Error creating reservation!");
-    return response.json();
+        const response = await fetch(`${RESERVES_API}/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(reservationData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error creating reservation: ${errorMessage}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error("Reservation creation failed:", error.message);
+        return null;
+    }
 }
+
 
 /**
  * Obtiene todas las reservas
@@ -47,8 +62,11 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
+
+    const token = localStorage.getItem("token");
     const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: { "Authorization": `Bearer ${token}` }
     });
 
     if (!response.ok) throw new Error("Error al cancelar la reserva!");
