@@ -14,7 +14,7 @@ const CreateAdmin = ({ onBack }) => {
             return;
         }
         try {
-            await createAdmin(userName); // <-- Enviar solo el username
+            await createAdmin(userName);
             alert("Admin created successfully");
             setAdminName("");
         } catch (error) {

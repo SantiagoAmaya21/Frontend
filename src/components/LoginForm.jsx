@@ -16,12 +16,9 @@ const LoginForm = () => {
       return;
     }
     try {
-      // Llamar a la API para obtener el token
       const token = await login(username, password);
 
       localStorage.setItem("currentUser", username);
-      
-      // Guardar el token en localStorage (o sessionStorage si quieres que dure solo en la sesión actual)
       localStorage.setItem("token", token);
       
       const role = await getUserRole(username);
@@ -32,7 +29,7 @@ const LoginForm = () => {
 
       alert("Login successful!");
 
-          // Redirigir según el rol
+      // Redirigir según el rol
       if (role === "USER") {
           window.location.href = "/user_dashboard";
       } else {
