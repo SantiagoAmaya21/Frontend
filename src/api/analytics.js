@@ -2,6 +2,13 @@ import { URL } from "../config";
 
 const BASE_URL = `${URL}/reservations`;
 
+/**
+ * Obtiene las reservas por fecha.
+ * @async
+ * @function getReservationsByDate
+ * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es correcta.
+ */
 export const getReservationsByDate = async () => {
     try {
         const token = localStorage.getItem("token");
@@ -25,6 +32,13 @@ export const getReservationsByDate = async () => {
     }
 };
 
+/**
+ * Obtiene las reservas por laboratorio.
+ * @async
+ * @function getReservationsByLab
+ * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es correcta.
+ */
 export const getReservationsByLab = async () => {
     try {
         const token = localStorage.getItem("token");
@@ -48,6 +62,13 @@ export const getReservationsByLab = async () => {
     }
 };
 
+/**
+ * Obtiene el promedio de reservas por prioridad.
+ * @async
+ * @function getAverageReservationsByPriority
+ * @returns {Promise<Object|null>} Un objeto con el promedio de reservas por prioridad o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es correcta.
+ */
 export const getAverageReservationsByPriority = async () => {
     try {
         const token = localStorage.getItem("token");
@@ -71,6 +92,13 @@ export const getAverageReservationsByPriority = async () => {
     }
 };
 
+/**
+ * Obtiene los niveles de demanda de laboratorios.
+ * @async
+ * @function getLabDemandLevels
+ * @returns {Promise<Object|null>} Un objeto con los niveles de demanda de laboratorios o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es correcta.
+ */
 export const getLabDemandLevels = async () => {
     try {
         const token = localStorage.getItem("token");

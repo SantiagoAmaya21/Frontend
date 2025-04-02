@@ -1,8 +1,16 @@
 import { URL } from "../config.js";
 
-
 const LOGIN_API = `${URL}/api/authenticate/login`;
 
+/**
+ * Inicia sesión en el sistema utilizando las credenciales proporcionadas.
+ * @async
+ * @function login
+ * @param {string} username - El nombre de usuario del usuario que intenta iniciar sesión.
+ * @param {string} password - La contraseña del usuario.
+ * @returns {Promise<string>} El token de autenticación si el inicio de sesión es exitoso.
+ * @throws {Error} Lanza un error con el mensaje de respuesta si el inicio de sesión falla.
+ */
 export async function login(username, password) {
   try {
     const response = await fetch(LOGIN_API, {
