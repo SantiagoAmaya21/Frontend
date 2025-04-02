@@ -14,6 +14,7 @@ const RESERVES_API = `${URL}/reservations`;
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
     try {
+        const token = localStorage.getItem("token");
 
         const reservationData = {
             labName,
@@ -27,7 +28,8 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
         const response = await fetch(`${RESERVES_API}/create`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(reservationData)
         });
