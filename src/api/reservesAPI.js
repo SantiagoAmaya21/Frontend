@@ -62,8 +62,12 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
+    const token = localStorage.getItem("token");
     const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
     });
 
     if (!response.ok) throw new Error("Error al cancelar la reserva!");
