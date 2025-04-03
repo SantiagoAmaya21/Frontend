@@ -2,22 +2,22 @@ import { URL } from "../config";
 
 const BASE_URL = `${URL}/reservations`;
 
+function getAuthHeaders() {
+    const token = localStorage.getItem("token");
+    return {
+        "Authorization": `Bearer ${token}`
+    };
+}
+
 /**
  * Obtiene las reservas por fecha.
- * @async
- * @function getReservationsByDate
  * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
  */
 export const getReservationsByDate = async () => {
     try {
-        const token = localStorage.getItem("token");
-
         const response = await fetch(`${BASE_URL}/by-date`, {
             method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
+            headers: getAuthHeaders()
         });
 
         if (!response.ok) {
@@ -25,7 +25,6 @@ export const getReservationsByDate = async () => {
         }
 
         return await response.json();
-
     } catch (error) {
         console.error("Error en getReservationsByDate:", error.message);
         return null;
@@ -34,20 +33,13 @@ export const getReservationsByDate = async () => {
 
 /**
  * Obtiene las reservas por laboratorio.
- * @async
- * @function getReservationsByLab
  * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
  */
 export const getReservationsByLab = async () => {
     try {
-        const token = localStorage.getItem("token");
-
         const response = await fetch(`${BASE_URL}/by-lab`, {
             method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
+            headers: getAuthHeaders()
         });
 
         if (!response.ok) {
@@ -55,7 +47,6 @@ export const getReservationsByLab = async () => {
         }
 
         return await response.json();
-
     } catch (error) {
         console.error("Error en getReservationsByLab:", error.message);
         return null;
@@ -64,20 +55,13 @@ export const getReservationsByLab = async () => {
 
 /**
  * Obtiene el promedio de reservas por prioridad.
- * @async
- * @function getAverageReservationsByPriority
  * @returns {Promise<Object|null>} Un objeto con el promedio de reservas por prioridad o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
  */
 export const getAverageReservationsByPriority = async () => {
     try {
-        const token = localStorage.getItem("token");
-
         const response = await fetch(`${BASE_URL}/average-by-priority`, {
             method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
+            headers: getAuthHeaders()
         });
 
         if (!response.ok) {
@@ -85,7 +69,6 @@ export const getAverageReservationsByPriority = async () => {
         }
 
         return await response.json();
-
     } catch (error) {
         console.error("Error en getAverageReservationsByPriority:", error.message);
         return null;
@@ -94,21 +77,13 @@ export const getAverageReservationsByPriority = async () => {
 
 /**
  * Obtiene los niveles de demanda de laboratorios.
- * @async
- * @function getLabDemandLevels
  * @returns {Promise<Object|null>} Un objeto con los niveles de demanda de laboratorios o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
  */
 export const getLabDemandLevels = async () => {
     try {
-        const token = localStorage.getItem("token");
-
-
-        const response = await fetch(`${BASE_URL}/by-lab`, {
+        const response = await fetch(`${BASE_URL}/demand-levels`, {  // <--- ¿Este endpoint es correcto?
             method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
+            headers: getAuthHeaders()
         });
 
         if (!response.ok) {
@@ -116,10 +91,8 @@ export const getLabDemandLevels = async () => {
         }
 
         return await response.json();
-
     } catch (error) {
         console.error("Error en getLabDemandLevels:", error.message);
         return null;
     }
 };
-

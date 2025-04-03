@@ -3,6 +3,14 @@ import { getCurrentUserId } from "../auth/userSession";
 
 const RESERVES_API = `${URL}/reservations`;
 
+function getAuthHeaders() {
+    const token = localStorage.getItem("token");
+    return {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+    };
+}
+
 /**
  * Crea una nueva reserva
  * @param {string} labName - Nombre del laboratorio
@@ -14,8 +22,6 @@ const RESERVES_API = `${URL}/reservations`;
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
     try {
-        const token = localStorage.getItem("token");
-
         const reservationData = {
             labName,
             username: getCurrentUserId(),
@@ -27,10 +33,7 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
 
         const response = await fetch(`${RESERVES_API}/create`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
+            headers: getAuthHeaders(),
             body: JSON.stringify(reservationData)
         });
 
@@ -45,14 +48,14 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
     }
 }
 
-
 /**
  * Obtiene todas las reservas
  * @returns {Promise<object[]>} - Lista de reservas
  */
 export async function getAllReservations() {
     const response = await fetch(`${RESERVES_API}/all`, {
-          method: "GET"
+        method: "GET",
+        headers: getAuthHeaders()
     });
     if (!response.ok) throw new Error("Error al obtener reservas!");
     return response.json();
@@ -64,12 +67,9 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
-    const token = localStorage.getItem("token");
     const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
         method: "DELETE",
-        headers: {
-            "Authorization": `Bearer ${token}`
-        }
+        headers: getAuthHeaders()
     });
 
     if (!response.ok) throw new Error("Error al cancelar la reserva!");
