@@ -3,12 +3,12 @@ import { URL } from "../config";
 const USER_API = `${URL}/api/users`;
 
 /**
- * Obtiene un usuario por su nombre de usuario.
+ * Recupera un usuario utilizando su nombre de usuario.
  * @async
  * @function getUserByUsername
- * @param {string} username - El nombre de usuario del usuario a buscar.
- * @returns {Promise<Object|null>} El usuario encontrado o null si ocurre un error.
- * @throws {Error} Lanza un error si el usuario no se encuentra.
+ * @param {string} username - El nombre de usuario del usuario que se desea encontrar.
+ * @returns {Promise<Object|null>} El usuario encontrado o null si se genera un error.
+ * @throws {Error} Lanza un error si el usuario no fue encuentrado.
  */
 export async function getUserByUsername(username) {
     try {
@@ -28,12 +28,12 @@ export async function getUserByUsername(username) {
 }
 
 /**
- * Crea un nuevo usuario.
+ * Registra un nuevo usuario.
  * @async
  * @function createUser
- * @param {Object} userData - Los datos del usuario que se va a crear.
- * @returns {Promise<Object|null>} El usuario creado o null si ocurre un error.
- * @throws {Error} Lanza un error si la creación falla.
+ * @param {Object} userData - Los datos del usuario que se va a registrar.
+ * @returns {Promise<Object|null>} El usuario creado o null si se genera un error.
+ * @throws {Error} Lanza un error si la creación del usuario falla.
  */
 export async function createUser(userData) {
     try {
@@ -56,12 +56,12 @@ export async function createUser(userData) {
 }
 
 /**
- * Crea un administrador con el nombre de usuario dado.
+ * Registra un administrador con el nombre de usuario especificado.
  * @async
  * @function createAdmin
- * @param {string} username - El nombre de usuario del administrador a crear.
- * @returns {Promise<Object|null>} El administrador creado o null si ocurre un error.
- * @throws {Error} Lanza un error si la creación falla.
+ * @param {string} username - El nombre de usuario del administrador a registrar.
+ * @returns {Promise<Object|null>} El administrador creado o null si se genera un error.
+ * @throws {Error} Lanza un error si la creación del administrador falla.
  */
 export async function createAdmin(username) {
     try {
@@ -88,12 +88,12 @@ export async function createAdmin(username) {
 }
 
 /**
- * Elimina un usuario por su ID.
+ * Elimina un usuario utilizando su ID.
  * @async
  * @function deleteUser
- * @param {number|string} id - El ID del usuario a eliminar.
- * @returns {Promise<Object|null>} El resultado de la operación o null si ocurre un error.
- * @throws {Error} Lanza un error si la eliminación falla.
+ * @param {number|string} id - El ID del usuario que se desea eliminar.
+ * @returns {Promise<Object|null>} El resultado de la operación o null si se genera un error.
+ * @throws {Error} Lanza un error si la eliminación del usuario falla.
  */
 export async function deleteUser(id) {
     try {
@@ -119,12 +119,12 @@ export async function deleteUser(id) {
 }
 
 /**
- * Obtiene el rol de un usuario por su nombre de usuario.
+ * Recupera el rol de un usuario utilizando su nombre de usuario.
  * @async
  * @function getUserRole
- * @param {string} username - El nombre de usuario del usuario.
- * @returns {Promise<string|null>} El rol del usuario o null si ocurre un error.
- * @throws {Error} Lanza un error si el rol no se encuentra.
+ * @param {string} username - El nombre de usuario ingresado por el usuario.
+ * @returns {Promise<string|null>} El rol del usuario o null si se genera un error.
+ * @throws {Error} Lanza un error si el rol no fue encontrado.
  */
 export async function getUserRole(username) {
     try {

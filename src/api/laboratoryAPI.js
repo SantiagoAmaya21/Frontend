@@ -3,11 +3,11 @@ import { URL } from "../config";
 const LAB_API = `${URL}/laboratories`;
 
 /**
- * Obtiene todos los laboratorios disponibles.
+ * Recupera todos los laboratorios disponibles.
  * @async
  * @function getAllLaboratories
- * @returns {Promise<Array>} Una lista de laboratorios o un array vacío en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
+ * @returns {Promise<Array>} Una lista de laboratorios o un array vacío si sucede un error.
+ * @throws {Error} Lanza un error si la respuesta no es exitosa.
  */
 export async function getAllLaboratories() {
     try {
@@ -27,12 +27,12 @@ export async function getAllLaboratories() {
 }
 
 /**
- * Obtiene un laboratorio por nombre.
+ * Recupera un laboratorio por nombre.
  * @async
  * @function getLaboratoryByName
- * @param {string} name - El nombre del laboratorio que se desea buscar.
- * @returns {Promise<Object|null>} El laboratorio encontrado o null en caso de error.
- * @throws {Error} Lanza un error si el laboratorio no se encuentra.
+ * @param {string} name - El nombre del laboratorio que se esta buscando.
+ * @returns {Promise<Object|null>} El laboratorio encontrado o null en caso de que se genere un error.
+ * @throws {Error} Lanza un error si el laboratorio no fue encuentra.
  */
 export async function getLaboratoryByName(name) {
     try {
@@ -52,12 +52,12 @@ export async function getLaboratoryByName(name) {
 }
 
 /**
- * Crea un laboratorio nuevo.
+ * Crea un nuevo laboratorio.
  * @async
  * @function createLaboratory
- * @param {Object} laboratoryData - Los datos del laboratorio que se desea crear.
- * @returns {Promise<Object|null>} El laboratorio creado o null en caso de error.
- * @throws {Error} Lanza un error si la creación falla.
+ * @param {Object} laboratoryData - Los datos del laboratorio que se busca crear.
+ * @returns {Promise<Object|null>} El laboratorio creado o null en caso de que se genere un error.
+ * @throws {Error} Lanza un error si la creación del laboratorio falla.
  */
 export async function createLaboratory(laboratoryData) {
     try {
@@ -79,13 +79,13 @@ export async function createLaboratory(laboratoryData) {
 }
 
 /**
- * Consulta la disponibilidad de laboratorios para un rango de fecha y hora.
+ * Obtiene la disponibilidad de laboratorios para un rango de fecha y hora.
  * @async
  * @function checkLaboratoriesAvailability
- * @param {string} startDateTime - Fecha y hora de inicio (ISO 8601).
- * @param {string} endDateTime - Fecha y hora de finalización (ISO 8601).
- * @returns {Promise<Object|null>} Disponibilidad de los laboratorios o null en caso de error.
- * @throws {Error} Lanza un error si la consulta falla.
+ * @param {string} startDateTime - Fecha y hora de inicio (ISO 8601)
+ * @param {string} endDateTime - Fecha y hora de finalización (ISO 8601)
+ * @returns {Promise<Object|null>} Disponibilidad de los laboratorios o null en caso de uqe se genere un error.
+ * @throws {Error} Lanza un error si la consulta fallo.
  */
 export async function checkLaboratoriesAvailability(startDateTime, endDateTime) {
     try {

@@ -136,6 +136,29 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_ROCK_00CB7D11E }}
           action: "close"
 ```
+## Elección de Chart.js para Visualización de Datos
+
+### Comparación de Bibliotecas de Gráficos en JavaScript
+
+Para la implementación de la página de "Analítica" en nuestra aplicación, hemos evaluado diversas bibliotecas de visualización de datos en JavaScript. Tras analizar las opciones disponibles, hemos decidido utilizar **Chart.js** debido a su facilidad de integración con **React** y su simplicidad en el manejo de datos.
+
+A continuación, se presenta una comparación entre **Chart.js** y otras opciones populares:
+
+| Biblioteca    | Pros | Contras |
+|--------------|------|---------|
+| **Chart.js** | Fácil de integrar con React (¡ideal para nuestro proyecto!)<br>Documentación clara y extensa<br>Compatible con varios tipos de gráficos<br>Rendimiento optimizado para dashboards pequeños y medianos | Puede ser menos flexible que D3.js para personalizaciones avanzadas<br>No es ideal para conjuntos de datos masivos |
+| **D3.js** | Altamente personalizable<br>Manipulación avanzada de SVG y DOM<br>Compatible con visualizaciones interactivas complejas | Curva de aprendizaje alta<br>Requiere más código para lograr lo mismo que en Chart.js<br>Mayor consumo de recursos |
+| **C3.js** | Basado en D3.js pero con una API más fácil de usar<br>Soporta interactividad y configuraciones flexibles | Depende de D3.js (puede ser pesado)<br>No tan popular como otras opciones |
+| **Google Charts** | Fácil de usar y bien documentado<br>Integrado con Google Data Studio<br>Variedad de gráficos predefinidos | Requiere conexión a internet (menos personalizable)<br>No tan flexible como D3.js o Chart.js |
+
+### Justificación de Chart.js para nuestro Proyecto
+
+1. **Fácil Integración con React**: Chart.js tiene soporte directo con React a través de librerías como `react-chartjs-2`, lo que facilita la implementación de gráficos sin necesidad de manipular directamente el DOM.
+2. **Curva de Aprendizaje Baja**: A diferencia de D3.js, Chart.js permite crear gráficos funcionales con menos código, lo que acelera el desarrollo.
+3. **Rendimiento y Simplicidad**: Para dashboards de tamaño mediano, Chart.js ofrece un excelente balance entre rendimiento y facilidad de uso.
+4. **Interactividad Incluida**: Soporta tooltips, animaciones y eventos sin configuraciones complicadas.
+5. **Diseño Moderno**: Los gráficos tienen un aspecto limpio y personalizable sin necesidad de grandes modificaciones.
+
 
 ## Funcionamiento de la pagina 
 A continuación, se presentan imágenes que muestran las diferentes secciones de la aplicación, desde la interfaz de usuario hasta la interfaz de administrador.

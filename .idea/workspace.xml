@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="72031474-bab2-478d-a970-dd639c767de0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ConsultLaboratories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ConsultLaboratories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/consultLaboratories.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/consultLaboratories.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/analytics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/laboratoryAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/laboratoryAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/reservesAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/reservesAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,18 +26,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "CRISTIANSILVAP"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CRISTIANSILVAP&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SantiagoAmaya21/Frontend.git",
-    "accountId": "d5f9bc8b-8a31-4607-810f-661ef177ccf4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SantiagoAmaya21/Frontend.git&quot;,
+    &quot;accountId&quot;: &quot;d5f9bc8b-8a31-4607-810f-661ef177ccf4&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -47,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "beauty",
+    "git-widget-placeholder": "Final",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Difga/Downloads/Frontend",
     "node.js.detected.package.eslint": "true",
