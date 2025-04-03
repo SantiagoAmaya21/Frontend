@@ -4,29 +4,15 @@
   align-items: center;
   padding: 20px;
   gap: 20px;
-  background-color: #1e1e1e; /* Fondo oscuro para mejor contraste */
-  min-height: 100vh;
 }
 
-/* Título principal */
-.analytics-title {
-  font-size: 36px;
+.analytics-container h1 {
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: white;
-  margin-bottom: 10px;
-}
-
-/* Subtítulo */
-.analytics-subtitle {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  color: #ff4c4c; /* Rojo más llamativo */
   margin-bottom: 20px;
 }
 
-/* Contenedor de las gráficas */
 .chart-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -35,47 +21,25 @@
   max-width: 1200px;
 }
 
-/* Cada gráfico */
 .chart-item {
   background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Título dentro de cada gráfico */
 .chart-item h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  color: #333;
   margin-bottom: 10px;
 }
 
-/* Ajustar tamaño de las gráficas */
 .chart-item canvas {
   width: 100%;
   max-width: 500px;
-}
-
-/* Botón de volver */
-.back-button {
-  margin-top: 30px;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  background-color: #ff4c4c; /* Rojo vibrante */
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.back-button:hover {
-  background-color: #b52b39;
 }
 
 /* Responsive */
@@ -83,40 +47,4 @@
   .chart-grid {
     grid-template-columns: 1fr;
   }
-
-  .analytics-title {
-    font-size: 30px;
-  }
-
-  .analytics-subtitle {
-    font-size: 24px;
-  }
-  /* Botón de volver con estilo llamativo */
-  .back-button {
-    margin-top: 30px;
-    padding: 14px 28px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #ff4c4c, #ff1e1e); /* Degradado rojo */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255, 76, 76, 0.5); /* Sombra llamativa */
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Efecto al pasar el mouse */
-  .back-button:hover {
-    background: linear-gradient(135deg, #ff1e1e, #b52b39);
-    transform: scale(1.1); /* Efecto de crecimiento */
-    box-shadow: 0 8px 20px rgba(255, 76, 76, 0.7); /* Más sombra */
-  }
-
-  /* Efecto de clic */
-  .back-button:active {
-    transform: scale(0.95); /* Efecto de presión */
-    box-shadow: 0 3px 10px rgba(255, 76, 76, 0.5);
-  }
-
 }

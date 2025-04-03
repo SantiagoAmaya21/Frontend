@@ -24,7 +24,7 @@ const UserDashboard = () => {
             navigate("/");
           }}
         >
-          Sign out
+          Back
         </button>
       </div>
     </div>

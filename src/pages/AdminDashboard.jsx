@@ -24,7 +24,7 @@ const AdminDashboard = () => {
             navigate("/");
           }}
         >
-          Sign out
+          Back
         </button>
       </div>
     </div>
