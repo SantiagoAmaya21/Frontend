@@ -1,7 +1,6 @@
 import { useState } from "react"; // Importa el hook useState de React
 import { checkLaboratoriesAvailability } from "../api/laboratoryAPI"; // Importa la función para consultar la disponibilidad de los laboratorios
 import "../styles/consultLaboratories.css"; // Importa los estilos del componente
-import laboratoriesImg from "../img/laboratories.png"; // Importa la imagen de laboratorios
 
 // Componente ConsultLaboratories
 const ConsultLaboratories = () => {
@@ -32,13 +31,7 @@ const ConsultLaboratories = () => {
 
     return (
         <div className="consult-labs-container">
-            {/* Cabecera */}
-            <header className="header">
-                <h1>Consult Laboratories</h1>
-            </header>
-
             <div className="content">
-
                 {/* Formulario de consulta */}
                 <div className="form-container">
                     <label>Start Date:</label>
@@ -55,19 +48,28 @@ const ConsultLaboratories = () => {
                     />
                     <button onClick={handleConsult}>Consult</button> {/* Botón para consultar los laboratorios */}
                 </div>
-            </div>
 
-            {/* Muestra los laboratorios disponibles si hay resultados */}
-            {availableLabs.length > 0 && (
-                <div className="results-container">
-                    <h3>Available Laboratories:</h3>
-                    <ul>
-                        {availableLabs.map((labName, index) => (
-                            <li key={index}>{labName}</li> // Muestra cada laboratorio en una lista
-                        ))}
-                    </ul>
-                </div>
-            )}
+                {/* Muestra los laboratorios disponibles en formato tabla si hay resultados */}
+                {availableLabs.length > 0 && (
+                    <div className="results-container">
+                        <h3>Available Laboratories:</h3>
+                        <table className="labs-table">
+                            <thead>
+                            <tr>
+                                <th>Laboratory Name</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {availableLabs.map((labName, index) => (
+                                <tr key={index}>
+                                    <td>{labName}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
