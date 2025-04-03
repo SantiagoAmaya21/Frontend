@@ -33,7 +33,8 @@ const RegisterForm = () => {
   return (
     <div className="register-container">
       <div className="register-box">
-        <h2>Create an account</h2>
+        <h2>Laboratory Reserves</h2>
+        <h3>Create an account</h3>
 
         <form onSubmit={handleSubmit}>
           <label>Username:</label>

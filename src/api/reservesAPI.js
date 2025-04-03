@@ -9,40 +9,26 @@ const RESERVES_API = `${URL}/reservations`;
  * @param {string} startDateTime - Fecha y hora de inicio
  * @param {string} endDateTime - Fecha y hora de finalización
  * @param {string} purpose - Propósito de la reserva
- * @param {string} priority - Prioridad de la reserva
  * @returns {Promise<object>} - Reserva creada
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
-    try {
-        const token = localStorage.getItem("token");
+    const reservationData = {
+        labName,
+        username: getCurrentUserId(),
+        startDateTime,
+        endDateTime,
+        purpose,
+        priority
+    };
 
-        const reservationData = {
-            labName,
-            username: getCurrentUserId(),
-            startDateTime,
-            endDateTime,
-            purpose,
-            priority
-        };
+    const response = await fetch(`${RESERVES_API}/create`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reservationData)
+    });
 
-        const response = await fetch(`${RESERVES_API}/create`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
-            body: JSON.stringify(reservationData)
-        });
-
-        if (!response.ok) {
-            throw new Error("Error creating reservation");
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error("Reservation creation failed:", error.message);
-        return null;
-    }
+    if (!response.ok) throw new Error("Error creating reservation!");
+    return response.json();
 }
 
 /**
@@ -50,21 +36,9 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
  * @returns {Promise<object[]>} - Lista de reservas
  */
 export async function getAllReservations() {
-    try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(`${RESERVES_API}/all`, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) throw new Error("Error al obtener reservas!");
-        return await response.json();
-    } catch (error) {
-        console.error("Failed to fetch all reservations:", error.message);
-        return [];
-    }
+    const response = await fetch(`${RESERVES_API}/all`);
+    if (!response.ok) throw new Error("Error al obtener reservas!");
+    return response.json();
 }
 
 /**
@@ -73,17 +47,9 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
-    try {
-        const token = localStorage.getItem("token");
-        const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        });
+    const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
+        method: "DELETE"
+    });
 
-        if (!response.ok) throw new Error("Error al cancelar la reserva!");
-    } catch (error) {
-        console.error("Failed to cancel reservation:", error.message);
-    }
+    if (!response.ok) throw new Error("Error al cancelar la reserva!");
 }
