@@ -7,6 +7,7 @@
 - **React Router DOM**: Para la navegación entre páginas dentro de la aplicación.
 - **GitHub Actions**: Para la integración y despliegue continuo (CI/CD).
 - **Azure Static Web Apps**: Para el despliegue de la aplicación en la nube.
+- **Fetch**: Para realizar peticiones HTTP
 
 ## Estructura del Proyecto
 
@@ -135,6 +136,33 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_ROCK_00CB7D11E }}
           action: "close"
 ```
+
+## Funcionamiento de la pagina 
+A continuación, se presentan imágenes que muestran las diferentes secciones de la aplicación, desde la interfaz de usuario hasta la interfaz de administrador.
+
+Interfaz de administrador: Incluye herramientas para visualizar análisis y gestionar funcionalidades como la creación de laboratorios y usuarios.
+
+![imagenes](images/adminpag.png)
+
+![imagenes](images/analitycs.png)
+
+![imagenes](images/cradmin.png)
+
+![imagenes](images/crlab.png)
+
+Interfaz de usuario: Permite consultar los laboratorios disponibles, realizar reservas y acceder a otras funciones.
+
+![imagenes](images/userpag.png)
+
+![imagenes](images/rspag.png)
+
+![imagenes](images/deletepag.png)
+
+![imagenes](images/cslabpag.png)
+
+Proceso de inicio de sesión: Muestra la autenticación y acceso a las distintas secciones de la plataforma.
+
+![imagenes](images/sincompletarlogin.png)
 
 ## Integrantes
 
