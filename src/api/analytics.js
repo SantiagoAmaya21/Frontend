@@ -3,11 +3,11 @@ import { URL } from "../config";
 const BASE_URL = `${URL}/reservations`;
 
 /**
- * Obtiene las reservas por fecha.
+ * Recupera las reservas según la fecha especificada.
  * @async
  * @function getReservationsByDate
- * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
+ * @returns {Promise<Object|null>} Un objeto que contiene las reservas obtenidas o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es exitosa.
  */
 export const getReservationsByDate = async () => {
     try {
@@ -33,11 +33,11 @@ export const getReservationsByDate = async () => {
 };
 
 /**
- * Obtiene las reservas por laboratorio.
+ * Recupera las reservas según el laboratorio especificado.
  * @async
  * @function getReservationsByLab
- * @returns {Promise<Object|null>} Un objeto con las reservas obtenidas o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
+ * @returns {Promise<Object|null>} Un objeto que contiene las reservas obtenidas o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es exitosa.
  */
 export const getReservationsByLab = async () => {
     try {
@@ -63,11 +63,11 @@ export const getReservationsByLab = async () => {
 };
 
 /**
- * Obtiene el promedio de reservas por prioridad.
+ * Recupera el promedio de reservas según la prioridad especificada.
  * @async
  * @function getAverageReservationsByPriority
- * @returns {Promise<Object|null>} Un objeto con el promedio de reservas por prioridad o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
+ * @returns {Promise<Object|null>} Un objeto que contiene el promedio de reservas por prioridad o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es exitosa.
  */
 export const getAverageReservationsByPriority = async () => {
     try {
@@ -93,11 +93,11 @@ export const getAverageReservationsByPriority = async () => {
 };
 
 /**
- * Obtiene los niveles de demanda de laboratorios.
+ * Recupera los niveles de demanda de los laboratorios.
  * @async
  * @function getLabDemandLevels
- * @returns {Promise<Object|null>} Un objeto con los niveles de demanda de laboratorios o null en caso de error.
- * @throws {Error} Lanza un error si la respuesta no es correcta.
+ * @returns {Promise<Object|null>} Un objeto que contiene los niveles de demanda de los laboratorios o null en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es exitosa.
  */
 export const getLabDemandLevels = async () => {
     try {

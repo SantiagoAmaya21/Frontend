@@ -4,13 +4,14 @@ import { getCurrentUserId } from "../auth/userSession";
 const RESERVES_API = `${URL}/reservations`;
 
 /**
- * Crea una nueva reserva
- * @param {string} labName - Nombre del laboratorio
- * @param {string} startDateTime - Fecha y hora de inicio
- * @param {string} endDateTime - Fecha y hora de finalización
- * @param {string} purpose - Propósito de la reserva
- * @param {string} priority - Prioridad de la reserva
- * @returns {Promise<object>} - Reserva creada
+ * Genera una nueva reserva.
+ * @param {string} labName - Nombre del laboratorio.
+ * @param {string} startDateTime - Fecha y hora de inicio.
+ * @param {string} endDateTime - Fecha y hora de finalización.
+ * @param {string} purpose - Propósito de la reserva.
+ * @param {string} priority - Prioridad de la reserva.
+ * @returns {Promise<object>} - Reserva creada.
+ * @throws {Error} - Error al crear la reserva.
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
     try {
@@ -46,8 +47,9 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
 }
 
 /**
- * Obtiene todas las reservas
- * @returns {Promise<object[]>} - Lista de reservas
+ * Recupera todas las reservas.
+ * @returns {Promise<object[]>} - Lista de reservas.
+ * @throws {Error} - Error al obtener las reservas.
  */
 export async function getAllReservations() {
     try {
@@ -68,9 +70,10 @@ export async function getAllReservations() {
 }
 
 /**
- * Cancela una reserva por ID
- * @param {string} reservationId - ID de la reserva a cancelar
+ * Cancela una reserva utilizando su ID.
+ * @param {string} reservationId - ID de la reserva a cancelar.
  * @returns {Promise<void>}
+ * @throws {Error} - Error al cancelar la reserva.
  */
 export async function cancelReservation(reservationId) {
     try {
