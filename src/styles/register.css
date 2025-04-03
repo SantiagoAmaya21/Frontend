@@ -4,50 +4,62 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('../img/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg') no-repeat center center/cover;
+  background-color: #121212; /* Fondo oscuro */
 }
 
 /* Caja de registro */
 .register-box {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #1e1e1e; /* Color oscuro similar al Admin Dashboard */
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
   text-align: center;
-  width: 350px;
+  width: 400px;
 }
 
+/* Títulos */
 h2 {
-  color: #333;
+  color: #ffffff;
+  font-size: 24px;
 }
 
 h3 {
-  color: #555;
+  color: #bbbbbb;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 /* Estilo de inputs */
 .input-field {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: #292929;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
 }
 
 /* Botón de registro */
 .register-button {
   width: 100%;
-  padding: 10px;
-  background-color: #9c2020;
+  padding: 12px;
+  background-color: #dc3545; /* Rojo oscuro */
   color: white;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
 }
 
+/* Efecto al pasar el mouse */
 .register-button:hover {
-  background-color: #7a1818;
+  background-color: #b52b39; /* Rojo más oscuro */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }

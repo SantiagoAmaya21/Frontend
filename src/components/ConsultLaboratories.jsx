@@ -38,10 +38,6 @@ const ConsultLaboratories = () => {
             </header>
 
             <div className="content">
-                {/* Imagen de laboratorios */}
-                <div className="image-container">
-                    <img src={laboratoriesImg} alt="Laboratories" />
-                </div>
 
                 {/* Formulario de consulta */}
                 <div className="form-container">

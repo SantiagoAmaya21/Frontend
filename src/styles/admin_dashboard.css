@@ -1,76 +1,142 @@
-/* Fondo con imagen */
-.admin-dashboard-container {
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos globales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1C1C1C; /* Fondo oscuro para más contraste */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("../img/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg") no-repeat center center/cover;
+  margin: 0;
+}
+
+/* Contenedor principal */
+.admin-dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 
 /* Caja central */
 .dashboard-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #2B2B2B; /* Caja más oscura */
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   text-align: center;
-  width: 400px;
+  width: 90%;
+  max-width: 420px;
+  border-top: 5px solid #D32F2F; /* Línea roja superior */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Título */
 .dashboard-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #E53935; /* Rojo más vibrante */
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Botones */
 .dashboard-button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin: 10px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  text-transform: uppercase;
 }
 
-/* Colores de los botones */
-.createLab-btn {
-  background-color: #dc3545;
+/* Estilos para botones principales */
+.primary-btn {
+  background-color: #E53935;
   color: white;
+  box-shadow: 0 4px 8px rgba(229, 57, 53, 0.5);
 }
 
-.createLab-btn:hover {
-  background-color: #b52b39;
+.primary-btn:hover {
+  background-color: #B71C1C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(183, 28, 28, 0.7);
 }
 
-.createAdmin-btn {
-  background-color: #dc3545;
-  color: white;
+.primary-btn:active {
+  background-color: #9A1010;
+  transform: scale(1);
 }
 
-.createAdmin-btn:hover {
-  background-color: #b52b39;
-}
-
-.analytics-btn {
-  background-color: #dc3545;
-  color: white;
-}
-
-.analytics-btn:hover {
-  background-color: #b52b39;
-}
-
+/* Botón de regreso */
 .back-btn {
-  background-color: #6c757d;
+  background-color: #444;
   color: white;
+  box-shadow: 0 4px 8px rgba(100, 100, 100, 0.5);
 }
 
 .back-btn:hover {
-  background-color: #545b62;
+  background-color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(80, 80, 80, 0.7);
+}
+
+.back-btn:active {
+  background-color: #222;
+  transform: scale(1);
+}
+
+/* Secciones de botones específicos */
+.createLab-btn, .createAdmin-btn, .analytics-btn {
+  background-color: #E53935;
+  color: white;
+  box-shadow: 0 4px 8px rgba(229, 57, 53, 0.5);
+}
+
+.createLab-btn:hover, .createAdmin-btn:hover, .analytics-btn:hover {
+  background-color: #B71C1C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(183, 28, 28, 0.7);
+}
+
+.createLab-btn:active, .createAdmin-btn:active, .analytics-btn:active {
+  background-color: #9A1010;
+  transform: scale(1);
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  .dashboard-box {
+    padding: 25px;
+  }
+
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .dashboard-button {
+    font-size: 14px;
+    padding: 12px;
+  }
 }

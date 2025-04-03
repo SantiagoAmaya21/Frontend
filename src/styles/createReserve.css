@@ -1,85 +1,131 @@
+/* Contenedor principal */
 .create-reserve-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
     width: 100%;
+    padding: 20px;
+    background-color: #121212;
+    box-sizing: border-box;
 }
 
-.header {
-    width: 100%;
-    background-color: #a02c2c;
+/* Estilo del formulario */
+.form-container {
+    background-color: rgba(19, 18, 18, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    width: 30%;
+    height: calc(100vh - 40px);
     color: white;
     text-align: center;
-    padding: 20px 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin-top: 20px;
-}
-
-.header-container img {
-    width: 50%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.form-container {
-    background-color: #a02c2c;
-    padding: 20px;
-    border-radius: 10px;
-    width: 40%;
-    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    border: 2px solid #9c2020; /* Borde sutil */
 }
 
-.form-container label {
-    font-weight: bold;
-    margin: 10px 0 5px;
-}
-
+/* Estilo de inputs */
 .form-container input {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.form-container button {
-    background-color: white;
-    color: black;
     padding: 10px;
-    width: 100px;
-    margin: 10px;
+    margin: 8px 0;
     border: none;
+    border-radius: 4px;
+    background-color: #292929;
+    color: white;
+    outline: none;
+}
+
+/* Botón */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #cf0e0e;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+.form-container button:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.05);
+}
+
+/* Contenedor de la tabla */
 .table-container {
-    width: 90%;
-    margin-top: 20px;
+    width: 68%;
+    background-color: rgba(19, 18, 18, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #9c2020; /* Borde sin sombra */
 }
 
+/* Contenedor con scroll */
+.table-content {
+    flex-grow: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+/* Estilos de la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
+    color: white;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 8px;
+/* Encabezados de la tabla */
+th {
+    background-color: #7a1818;
+    padding: 12px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #f4f4f4;
+/* Filas alternas */
+tr:nth-child(even) {
+    background-color: #292929;
+}
+
+/* Efecto hover en filas */
+tr:hover {
+    background-color: #3a3a4d;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 900px) {
+    .create-reserve-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .table-container {
+        width: 90%;
+        height: auto;
+        max-height: 400px;
+    }
+
+    .form-container {
+        width: 90%;
+        height: auto;
+    }
 }
