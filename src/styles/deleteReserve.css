@@ -1,73 +1,125 @@
+/* Contenedor principal */
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Más espacio entre la imagen y el formulario */
-    margin-top: 20px;
-    flex-wrap: wrap; /* Permite que se acomode en pantallas pequeñas */
+    gap: 60px; /* Más espacio entre elementos */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px; /* Más ancho */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Imagen */
 .lab-image {
-    width: 500px; /* Tamaño más manejable */
+    width: 550px; /* Un poco más grande */
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
 }
 
+/* Contenedor de eliminación */
 .delete-container {
-    background-color: #9c2020;
-    width: 350px; /* Tamaño más pequeño para mejor alineación */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #121212; /* Negro intenso */
+    width: 400px; /* Más ancho */
+    padding: 30px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.3); /* Sombra roja para efecto intenso */
+    border: 2px solid #9c2020;
 }
 
+/* Título */
 .delete-title {
     font-family: "Inter-ExtraBold", Helvetica;
     font-weight: 800;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
+/* Etiquetas */
 .delete-label {
-    font-size: 16px;
-    color: #d9d9d9;
+    font-size: 18px;
+    color: #ffffff;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
+/* Campos de entrada */
 .delete-input {
-    width: 80%;
-    padding: 8px;
-    font-size: 16px;
-    margin: 10px 0;
-    background-color: #d9d9d9;
-    border: none;
+    width: 90%;
+    padding: 12px;
+    font-size: 18px;
+    margin: 12px 0;
+    background-color: #292929; /* Negro oscuro */
+    border: 2px solid #9c2020; /* Borde rojo oscuro */
+    color: white;
     text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+    outline: none;
 }
 
+.delete-input:focus {
+    background-color: #3a3a3a;
+    border-color: #ff4d4d;
+    box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.5);
+}
+
+/* Botón */
 .button-container {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
+/* Estilos de los botones */
 .delete-button {
-    width: 100px;
-    padding: 8px;
-    font-size: 14px;
+    width: 140px; /* Más ancho */
+    padding: 12px;
+    font-size: 16px;
     font-weight: bold;
-    background-color: #d9d9d9;
+    background-color: #9c2020;
+    color: white;
     border: none;
     cursor: pointer;
     text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de iluminación al pasar el mouse */
+.delete-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 77, 77, 0.4) 0%, transparent 60%);
+    transition: transform 0.4s ease-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.delete-button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
 .delete-button:hover {
-    background-color: #b0b0b0;
+    background-color: #ff4d4d;
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+    transform: translateY(-3px);
 }

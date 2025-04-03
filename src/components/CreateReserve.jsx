@@ -57,14 +57,8 @@ const CreateReserve = () => {
 
     return (
         <div className="create-reserve-container">
-            {/* Cabecera del componente */}
-            <header className="header">
-                <h1>Laboratory Reserves</h1>
-            </header>
 
             <div className="header-container">
-                {/* Imagen relacionada con los laboratorios */}
-                <img src={laboratoriesImage} alt="Laboratories" />
 
                 {/* Formulario para crear una nueva reserva */}
                 <div className="form-container">

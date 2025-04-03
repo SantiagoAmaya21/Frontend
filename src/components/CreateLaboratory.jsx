@@ -29,14 +29,7 @@ const CreateLaboratory = ({ onBack }) => {
 
     return (
         <div className="create-laboratory-page">
-            {/* Cabecera del componente */}
-            <div className="header">
-                <h1>Laboratory Reserves</h1>
-            </div>
-
             <div className="content">
-                {/* Imagen del laboratorio */}
-                <img src={labImage} alt="Laboratory" className="lab-image" />
 
                 {/* Formulario de creación de laboratorio */}
                 <div className="create-container">

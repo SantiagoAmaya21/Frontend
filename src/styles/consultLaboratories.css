@@ -1,11 +1,12 @@
-/* Contenedor principal */
+/* Contenedor principal con fondo oscuro */
 .consult-labs-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    min-height: 100vh;
 }
 
 /* Encabezado */
@@ -14,6 +15,7 @@
     width: 100%;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header h1 {
@@ -21,9 +23,10 @@
     font-size: 36px;
     font-weight: 800;
     margin: 0;
+    text-transform: uppercase;
 }
 
-/* Contenedor principal */
+/* Contenido principal */
 .content {
     display: flex;
     justify-content: center;
@@ -44,6 +47,7 @@
     max-width: 500px;
     height: auto;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Formulario */
@@ -55,6 +59,7 @@
     border-radius: 8px;
     width: 350px;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 .form-container label {
@@ -65,17 +70,26 @@
     text-align: center;
 }
 
+/* Campos de entrada */
 .form-container input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #d9d9d9;
+    background-color: #2e2e2e; /* Más oscuro para el contraste */
+    color: #ffffff;
     font-size: 16px;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
+.form-container input:focus {
+    background-color: #3e3e3e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Botones con efecto de iluminación */
 .form-container button {
     width: 150px;
     padding: 10px;
@@ -87,10 +101,32 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.form-container button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    transition: transform 0.4s ease-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.form-container button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
 .form-container button:hover {
     background-color: #b8b8b8;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Resultados */
@@ -103,7 +139,7 @@
 .results-container h3 {
     font-size: 24px;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
 }
 
 .results-container ul {
@@ -113,8 +149,15 @@
 
 .results-container li {
     font-size: 18px;
-    background-color: #d9d9d9;
+    background-color: #2e2e2e;
+    color: #ffffff;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.results-container li:hover {
+    background-color: #444444;
+    transform: scale(1.05);
 }
