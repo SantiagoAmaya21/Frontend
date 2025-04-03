@@ -3,14 +3,6 @@ import { getCurrentUserId } from "../auth/userSession";
 
 const RESERVES_API = `${URL}/reservations`;
 
-function getAuthHeaders() {
-    const token = localStorage.getItem("token");
-    return {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-    };
-}
-
 /**
  * Crea una nueva reserva
  * @param {string} labName - Nombre del laboratorio
@@ -22,6 +14,8 @@ function getAuthHeaders() {
  */
 export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
     try {
+        const token = localStorage.getItem("token");
+
         const reservationData = {
             labName,
             username: getCurrentUserId(),
@@ -33,7 +27,10 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
 
         const response = await fetch(`${RESERVES_API}/create`, {
             method: "POST",
-            headers: getAuthHeaders(),
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify(reservationData)
         });
 
@@ -53,12 +50,21 @@ export async function createReservation(labName, startDateTime, endDateTime, pur
  * @returns {Promise<object[]>} - Lista de reservas
  */
 export async function getAllReservations() {
-    const response = await fetch(`${RESERVES_API}/all`, {
-        method: "GET",
-        headers: getAuthHeaders()
-    });
-    if (!response.ok) throw new Error("Error al obtener reservas!");
-    return response.json();
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`${RESERVES_API}/all`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) throw new Error("Error al obtener reservas!");
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to fetch all reservations:", error.message);
+        return [];
+    }
 }
 
 /**
@@ -67,10 +73,17 @@ export async function getAllReservations() {
  * @returns {Promise<void>}
  */
 export async function cancelReservation(reservationId) {
-    const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-        method: "DELETE",
-        headers: getAuthHeaders()
-    });
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
 
-    if (!response.ok) throw new Error("Error al cancelar la reserva!");
+        if (!response.ok) throw new Error("Error al cancelar la reserva!");
+    } catch (error) {
+        console.error("Failed to cancel reservation:", error.message);
+    }
 }

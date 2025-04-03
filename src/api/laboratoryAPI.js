@@ -1,76 +1,110 @@
 import { URL } from "../config";
-import { getCurrentUserId } from "../auth/userSession";
 
-const RESERVES_API = `${URL}/reservations`;
+const LAB_API = `${URL}/laboratories`;
 
-function getAuthHeaders() {
-    const token = localStorage.getItem("token");
-    return {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-    };
+/**
+ * Obtiene todos los laboratorios disponibles.
+ * @async
+ * @function getAllLaboratories
+ * @returns {Promise<Array>} Una lista de laboratorios o un array vacío en caso de error.
+ * @throws {Error} Lanza un error si la respuesta no es correcta.
+ */
+export async function getAllLaboratories() {
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`${LAB_API}/all`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            },
+        });
+        if (!response.ok) throw new Error("Error fetching laboratories");
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to fetch laboratories:", error);
+        return [];
+    }
 }
 
 /**
- * Crea una nueva reserva
- * @param {string} labName - Nombre del laboratorio
- * @param {string} startDateTime - Fecha y hora de inicio
- * @param {string} endDateTime - Fecha y hora de finalización
- * @param {string} purpose - Propósito de la reserva
- * @param {string} priority - Prioridad de la reserva
- * @returns {Promise<object>} - Reserva creada
+ * Obtiene un laboratorio por nombre.
+ * @async
+ * @function getLaboratoryByName
+ * @param {string} name - El nombre del laboratorio que se desea buscar.
+ * @returns {Promise<Object|null>} El laboratorio encontrado o null en caso de error.
+ * @throws {Error} Lanza un error si el laboratorio no se encuentra.
  */
-export async function createReservation(labName, startDateTime, endDateTime, purpose, priority) {
+export async function getLaboratoryByName(name) {
     try {
-        const reservationData = {
-            labName,
-            username: getCurrentUserId(),
-            startDateTime,
-            endDateTime,
-            purpose,
-            priority
-        };
-
-        const response = await fetch(`${RESERVES_API}/create`, {
-            method: "POST",
-            headers: getAuthHeaders(),
-            body: JSON.stringify(reservationData)
+        const token = localStorage.getItem("token");
+        const response = await fetch(`${LAB_API}/name/${name}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            },
         });
-
-        if (!response.ok) {
-            throw new Error("Error creating reservation");
-        }
-
+        if (!response.ok) throw new Error("Laboratory not found");
         return await response.json();
     } catch (error) {
-        console.error("Reservation creation failed:", error.message);
+        console.error(`Failed to fetch laboratory with ID ${name}:`, error);
         return null;
     }
 }
 
 /**
- * Obtiene todas las reservas
- * @returns {Promise<object[]>} - Lista de reservas
+ * Crea un laboratorio nuevo.
+ * @async
+ * @function createLaboratory
+ * @param {Object} laboratoryData - Los datos del laboratorio que se desea crear.
+ * @returns {Promise<Object|null>} El laboratorio creado o null en caso de error.
+ * @throws {Error} Lanza un error si la creación falla.
  */
-export async function getAllReservations() {
-    const response = await fetch(`${RESERVES_API}/all`, {
-        method: "GET",
-        headers: getAuthHeaders()
-    });
-    if (!response.ok) throw new Error("Error al obtener reservas!");
-    return response.json();
+export async function createLaboratory(laboratoryData) {
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(`${LAB_API}/create`, {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}` 
+            },
+            body: JSON.stringify(laboratoryData),
+        });
+        if (!response.ok) throw new Error("Failed to create laboratory");
+        return await response.json();
+    } catch (error) {
+        console.error("Failed to create laboratory:", error);
+        return null;
+    }
 }
 
 /**
- * Cancela una reserva por ID
- * @param {string} reservationId - ID de la reserva a cancelar
- * @returns {Promise<void>}
+ * Consulta la disponibilidad de laboratorios para un rango de fecha y hora.
+ * @async
+ * @function checkLaboratoriesAvailability
+ * @param {string} startDateTime - Fecha y hora de inicio (ISO 8601).
+ * @param {string} endDateTime - Fecha y hora de finalización (ISO 8601).
+ * @returns {Promise<Object|null>} Disponibilidad de los laboratorios o null en caso de error.
+ * @throws {Error} Lanza un error si la consulta falla.
  */
-export async function cancelReservation(reservationId) {
-    const response = await fetch(`${RESERVES_API}/cancel/${reservationId}`, {
-        method: "DELETE",
-        headers: getAuthHeaders()
-    });
+export async function checkLaboratoriesAvailability(startDateTime, endDateTime) {
+    try {
+        const token = localStorage.getItem("token");
+        const response = await fetch(
+            `${LAB_API}/avaiable?startDateTime=${encodeURIComponent(startDateTime)}&endDateTime=${encodeURIComponent(endDateTime)}`,
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                },
+            }
+        );
 
-    if (!response.ok) throw new Error("Error al cancelar la reserva!");
+        if (!response.ok) throw new Error("Failed to check availability");
+        return await response.json();
+
+    } catch (error) {
+        console.error("Error al consultar disponibilidad:", error.message);
+        return null;
+    }
 }
