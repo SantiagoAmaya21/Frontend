@@ -1,70 +1,101 @@
-/* Contenedor principal */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: url('../img/escuela-colombiana-de-ingenieria-julio-garavito-banner.jpg') no-repeat center center/cover;
-}
-
-/* Caja de login */
+/* Caja de login con mejor contraste */
 .login-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1a1a1a; /* Un poco más claro para mejor visibilidad */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
   text-align: center;
-  width: 350px;
+  width: 400px;
+  border: 2px solid #9c2020; /* Borde rojo para contraste */
 }
 
-h2 {
-  color: #333;
+/* Título centrado con mejor visibilidad */
+.login-box h2 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-/* Estilo de inputs */
+/* Texto de etiquetas en blanco y centrado */
+.login-box label {
+  font-size: 16px;
+  color: #ffffff; /* Letras blancas */
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Estilo de los inputs con mejor contraste */
 .input-field {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-
-
-.login-button:hover {
-  background-color: #7a1818;
-}
-
-/* Botón de Next */
-.next-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #9c2020;
+  border-radius: 6px;
+  background-color: #232323; /* Un poco más claro */
+  color: #ffffff;
   font-size: 16px;
-  margin-top: 10px;
+  text-align: center;
 }
 
-.next-button:hover {
-  background-color: #b3b3b3;
+/* Resalta el borde cuando se selecciona el input */
+.input-field:focus {
+  outline: none;
+  border-color: #ff3b3b;
+  box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
 }
+
+/* Botón de Login */
+.next-button {
+  background-color: #dc3545; /* Rojo oscuro */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Efecto al pasar el mouse */
+.next-button:hover {
+  background-color: #b52b39; /* Un rojo más oscuro */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
 
 /* Enlace de registro */
 .signup-text {
   margin-top: 15px;
   font-size: 14px;
+  color: #ffffff;
 }
 
 .sign-up-link {
-  color: #9c2020;
+  color: #ff3b3b;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .sign-up-link:hover {
   text-decoration: underline;
 }
 
+label {
+  color: #ffffff; /* Texto blanco */
+}
+
+.register-box label {
+  color: #ffffff !important;
+}
 

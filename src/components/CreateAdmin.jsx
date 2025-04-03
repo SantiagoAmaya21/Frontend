@@ -30,14 +30,8 @@ const CreateAdmin = ({ onBack }) => {
 
     return (
         <div className="create-admin-page">
-            {/* Cabecera del componente */}
-            <div className="header">
-                <h1>Laboratory Reserves</h1>
-            </div>
 
             <div className="content">
-                {/* Imagen de laboratorio */}
-                <img src={labImage} alt="Laboratory" className="lab-image" />
 
                 {/* Contenedor para el formulario de creación del admin */}
                 <div className="create-container">

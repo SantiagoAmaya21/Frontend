@@ -29,14 +29,8 @@ const DeleteReserve = ({ onBack }) => {
 
     return (
         <div className="delete-page">
-            {/* Cabecera del componente */}
-            <div className="header">
-                <h1>Laboratory Reserves</h1>
-            </div>
 
             <div className="content">
-                {/* Imagen de laboratorio */}
-                <img src={labImage} alt="Laboratory" className="lab-image" />
                 
                 <div className="delete-container">
                     <h2 className="delete-title">Delete Reservation</h2>

@@ -1,73 +1,104 @@
-.content {
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Negro suave */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Más espacio entre la imagen y el formulario */
-    margin-top: 20px;
-    flex-wrap: wrap; /* Permite que se acomode en pantallas pequeñas */
+    height: 100vh;
+    margin: 0;
 }
 
-.lab-image {
-    width: 500px; /* Tamaño más manejable */
-    height: auto;
-    border-radius: 10px;
-}
-
+/* Contenedor principal más grande */
 .create-container {
-    background-color: #9c2020;
-    width: 350px; /* Tamaño más pequeño para mejor alineación */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #B71C1C; /* Rojo oscuro */
+    width: 500px; /* Más ancho */
+    padding: 40px; /* Más espacio interno */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título más grande */
 .create-title {
-    font-family: "Inter-ExtraBold", Helvetica;
-    font-weight: 800;
+    font-size: 28px; /* Más grande */
+    font-weight: 700;
     color: #ffffff;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
+/* Etiquetas */
 .create-label {
-    font-size: 16px;
-    color: #d9d9d9;
+    font-size: 18px;
+    color: #ffffff;
     font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
 }
 
+/* Campos de entrada más grandes */
 .create-input {
-    width: 80%;
-    padding: 8px;
-    font-size: 16px;
-    margin: 10px 0;
-    background-color: #d9d9d9;
-    border: none;
+    width: 90%;
+    padding: 12px;
+    font-size: 18px;
+    margin: 12px 0;
+    background-color: #8E0E0E; /* Rojo más oscuro */
+    border: 2px solid #FFCDD2; /* Borde claro */
+    color: white;
+    border-radius: 6px;
     text-align: center;
+    outline: none;
 }
 
+.create-input::placeholder {
+    color: #FFCDD2;
+}
+
+/* Contenedor de botones */
 .button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
+/* Botones más grandes */
 .create-button {
-    width: 100px;
-    padding: 8px;
-    font-size: 14px;
+    width: 48%;
+    padding: 12px;
+    font-size: 18px; /* Más grande */
     font-weight: bold;
-    background-color: #d9d9d9;
+    background-color: #E53935;
     border: none;
+    color: white;
+    border-radius: 6px;
     cursor: pointer;
-    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .create-button:hover {
-    background-color: #b0b0b0;
+    background-color: #FF5252;
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
